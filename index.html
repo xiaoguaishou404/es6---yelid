@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>111</div>
+</body>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    // function* a() {
+    //     let c = 0
+    //     while (true) {
+    //         yield c
+    //         yield 11
+
+    //         c++
+    //     }
+    // }
+    // var q = a()
+    // console.log(q.next())
+
+
+
+    // var idSym = Symbol("id")
+    // const person = {
+    //     name: "bruce",
+    //     age: 23,
+    //     [idSym]: "www"
+    // }
+    // for(key in person){
+    //     console.log(key);
+    // }
+    // console.log(person.hasOwnProperty(idSym));
+    // console.log(Object.keys(person));
+    // console.log(Object.getOwnPropertySymbols(person),"和",person[Object.getOwnPropertySymbols(person)[0]]);
+    // console.log(Object.getOwnPropertyDescriptor(person, idSym));
+
+
+    // const map1 = new Map();
+
+    // map1.set('0', 'foo');
+    // map1.set(1, 'bar');
+    // console.log(map1);
+    // // for(key of map1){
+    // //     console.log(key);
+    // // }
+
+    // const iterator1 = map1.entries();
+    // console.log(iterator1);
+
+    // console.log(iterator1.next());
+    // // expected output: ["0", "foo"]
+
+    // console.log(iterator1.next().value);
+    // // expected output: [1, "bar"]
+
+    // var obj = [1, 2, 3, 4]
+    // console.log(obj);
+    // console.log(obj.entries().next());
+    // console.log(obj[Symbol.iterator]().next());
+    // console.log(obj.values().next());
+
+
+    // function inh(o) {
+    //     function fff() {
+    //         this.age = 18
+    //     }
+
+    //     fff.prototype.pageSize = 100
+    //     return new fff()
+
+    // }
+    // // var book = {
+    // //     name: "hhh",
+    // //     pageSize: 100
+    // // }
+    // console.log(inh());
+
+
+    // var f = new Map([['a', 0], ['b', 1], ['c', 2], ['d', 3,], ['5', 4]])
+    // console.dir(f[Symbol.iterator]());
+
+    // var t = [1, 2, 3, 4, 5, 6]
+    // console.dir(Symbol);
+
+    // console.dir(Symbol.iterator);
+    // var e = Symbol("Symbol.iterator")
+    // console.dir(e);
+
+
+
+
+    // function readFile(path) {
+    //     return new Promise(function (resolve, reject) {
+    //         let ajax1 = $.ajax(path)
+    //         ajax1.then(function (data) {
+    //             resolve(data);
+    //         }, function (err) {
+    //             reject(err);
+    //         })
+    //     })
+    // }
+
+    // let promise1 = readFile("http://jsonplaceholder.typicode.com/posts")
+
+    // setTimeout(() => {
+    //     console.log("out");
+    // }, 0);
+    // console.dir(promise1);
+    // promise1.then(function (data) {
+    //     console.dir(data);
+    // })
+
+
+    // new Promise其实就是立即执行一个异步，然后用一个promise实例保存成功或者失败信息，
+    // 每次then方法其实并没有再次执行异步，只是把promise实例里面保存的成功或失败信息处理一下
+
+    new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(11)
+        }, 3000);
+    })
+
+        .then((res) => res
+        , (err) => {
+            console.log(err);
+        })
+        // .then((res) => {
+        //     console.log(res);
+        // })
+
+
+        // .then((res) => {
+        //     console.log(res);
+        // }, (err) => {
+        //     console.log(err);
+        // })
+
+
+
+// promise两种情况
+// pending状态，执行到then就先预存回调配置
+// 完成状态后再遇到then就立即执行then里的回调，回调的返回值会被用于链式调用
+// 
+
+</script>
+
+</html>

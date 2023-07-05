@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    111
+</body>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    function readFile(path) {
+        return new Promise(function (resolve, reject) {
+            let ajax1 = $.ajax(path)
+            ajax1.then(function (data) {
+                resolve(data);
+            }, function (err) {
+                reject(err);
+            })
+        })
+    }
+    let promise1 = readFile("http://jsonplaceholder.typicode.com/posts")
+
+    setTimeout(() => {
+        console.dir(promise1);
+        console.log("out");
+    }, 1000);
+    console.dir(promise1);
+    promise1.then(function (data) {
+        console.dir(data);
+    })
+</script>
+
+</html>
